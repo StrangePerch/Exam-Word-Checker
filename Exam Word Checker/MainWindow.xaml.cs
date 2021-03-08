@@ -33,6 +33,7 @@ namespace Exam_Word_Checker
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        
         private List<Task> tasks = new List<Task>();
         private CancellationTokenSource TokenSource;
 
