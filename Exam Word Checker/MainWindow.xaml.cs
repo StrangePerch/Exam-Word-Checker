@@ -130,17 +130,19 @@ namespace Exam_Word_Checker
 
             Panel.Children.Clear();
             ListView.Items.Clear();
+            
 
-            if (DiskChecker.Pause)
+            DiskChecker.Words.Clear();
+            foreach (var item in ListBox.Items)
             {
-                DiskChecker.Words.Clear();
-                foreach (var item in ListBox.Items)
-                {
-                    DiskChecker.Words.Add(item.ToString());
-                }
-                DiskChecker.Pause = false;
-                return;
+                DiskChecker.Words.Add(item.ToString());
             }
+            DiskChecker.Pause = false;
+
+            if (DiskChecker.Pause) return;
+            
+            Top.Clear();
+
 
             TokenSource = new CancellationTokenSource();
             DiskChecker.TokenSource = TokenSource;
